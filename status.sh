@@ -62,6 +62,7 @@ Download_Server_Status_server(){
 	wget -N --no-check-certificate "https://github.com/P3terChan/ServerStatus-V/archive/server.zip"
 	[[ ! -e "server.zip" ]] && echo -e "${Error} ServerStatus-V 服务端下载失败 !" && exit 1
 	unzip server.zip && rm -rf server.zip
+	mv ServerStatus-V-server ServerStatus-server
 	[[ ! -e "ServerStatus-server" ]] && echo -e "${Error} ServerStatus-V 服务端解压失败 !" && exit 1
 	if [[ ! -e "${file}" ]]; then
 		mv ServerStatus-server ServerStatus
